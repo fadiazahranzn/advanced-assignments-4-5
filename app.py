@@ -221,7 +221,6 @@ if st.session_state.prediction_run:
             <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 2rem;">
                 <h4 style="font-size: 1rem; font-weight: 700; color: #1e293b; margin: 0;">Distribusi Peluang</h4>
             </div>
-            
             <div style="position: relative; width: 14rem; height: 14rem; margin: 0 auto;">
                 <svg style="width: 100%; height: 100%; transform: rotate(-90deg);" viewBox="0 0 100 100">
                     <circle cx="50" cy="50" r="40" fill="transparent" stroke="#f1f5f9" stroke-width="12"></circle>
@@ -232,7 +231,6 @@ if st.session_state.prediction_run:
                     <span style="font-size: 0.6875rem; font-weight: 800; color: #10b981; text-transform: uppercase; letter-spacing: 0.1em; background: #ecfdf5; padding: 4px 12px; border-radius: 9999px;">Selamat</span>
                 </div>
             </div>
-            
             <div style="display: flex; justify-content: center; gap: 2rem; width: 100%; margin-top: 2.5rem; font-size: 0.875rem; font-weight: 700;">
                 <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 16px; height: 16px; border-radius: 50%; background-color: #10b981; box-shadow: 0 1px 2px rgba(0,0,0,0.05);"></span> Selamat <span style="color: #64748b; margin-left: 4px;">{survived_prob:.1f}%</span></div>
                 <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 16px; height: 16px; border-radius: 50%; background-color: #e2e8f0; border: 1px solid #cbd5e1;"></span> Tidak <span style="color: #64748b; margin-left: 4px;">{not_survived_prob:.1f}%</span></div>
@@ -258,7 +256,6 @@ if st.session_state.prediction_run:
                 <h4 style="font-size: 1rem; font-weight: 700; color: #1e293b; margin: 0;">Pengaruh Data Input</h4>
                 <span style="font-size: 0.75rem; font-weight: 700; background-color: #eef2ff; color: #4f46e5; padding: 6px 12px; border-radius: 8px; border: 1px solid #e0e7ff;">Analisis Model</span>
             </div>
-            
             <div style="display: flex; flex-direction: column; gap: 1.5rem; flex-grow: 1; justify-content: center;">
                 <div>
                     <div style="display: flex; justify-content: space-between; font-size: 0.875rem; font-weight: 700; margin-bottom: 8px;">
@@ -269,7 +266,6 @@ if st.session_state.prediction_run:
                         <div style="background: {gender_bg}; height: 100%; border-radius: 9999px; width: {gender_width}; transition: all 0.5s;"></div>
                     </div>
                 </div>
-                
                 <div>
                     <div style="display: flex; justify-content: space-between; font-size: 0.875rem; font-weight: 700; margin-bottom: 8px;">
                         <span style="color: #334155;">Kelas Tiket ({pclass})</span>
@@ -279,7 +275,6 @@ if st.session_state.prediction_run:
                         <div style="background: {pclass_bg}; height: 100%; border-radius: 9999px; width: {pclass_width}; transition: all 0.5s;"></div>
                     </div>
                 </div>
-                
                 <div>
                     <div style="display: flex; justify-content: space-between; font-size: 0.875rem; font-weight: 700; margin-bottom: 8px;">
                         <span style="color: #334155;">Saudara/Pasangan ({sibsp})</span>
@@ -290,7 +285,6 @@ if st.session_state.prediction_run:
                     </div>
                 </div>
             </div>
-            
             <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #f1f5f9; font-size: 0.8125rem; color: #64748b; line-height: 1.6; font-weight: 500;">
                 Model memberikan bobot besar pada <strong style="color: #1e293b; background: #f1f5f9; padding: 2px 4px; border-radius: 4px;">Jenis Kelamin ({sex})</strong> dan <strong style="color: #1e293b; background: #f1f5f9; padding: 2px 4px; border-radius: 4px;">Kelas Tiket</strong> dalam menentukan peluang keselamatan ini.
             </div>
@@ -310,7 +304,6 @@ if st.session_state.prediction_run:
                     ⚓
                 </div>
             </div>
-            
             <div style="padding: 1.5rem; padding-bottom: 2rem; border-bottom: 2px dashed #fde68a; flex-grow: 1;">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 1rem; margin-bottom: 2rem;">
                     <div>
@@ -330,7 +323,6 @@ if st.session_state.prediction_run:
                         <div style="font-weight: 600; font-size: 1.125rem;">£{fare:.2f}</div>
                     </div>
                 </div>
-                
                 <div style="background-color: white; border-radius: 0.75rem; padding: 1.25rem; text-align: center; border: 1px solid #fef3c7; position: relative; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
                     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 6px; background-color: {status_color}; box-shadow: 0 0 10px {status_color};"></div>
                     <div style="font-size: 0.6875rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em; color: #94a3b8; margin-bottom: 6px; margin-top: 4px;">Status Prediksi</div>
@@ -340,7 +332,6 @@ if st.session_state.prediction_run:
                     </div>
                 </div>
             </div>
-            
             <div style="padding: 1.5rem; background-color: rgba(254, 243, 199, 0.4); display: flex; justify-content: space-between; align-items: center; opacity: 0.9;">
                 <div style="opacity: 0.6; font-size: 0.5rem; font-family: monospace; letter-spacing: 0.2em; color: #78350f;">
                     || | || || | || ||| |<br>TN-84920183
