@@ -215,26 +215,34 @@ if st.session_state.prediction_run:
     with col1:
         # Probability Gauge using SVG/HTML
         dasharray = 251.2
-        dashoffset = dasharray - (dasharray * (survived_prob / 100))
+        dashoffset = dasharray - (dasharray * (display_prob / 100))
         
         st.markdown(f"""
-        <div class="dash-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
-            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 2rem;">
+        <div class="dash-card" style="display: flex; flex-direction: column; align-items: center; justify-content: space-between; text-align: center;">
+            <div style="width: 100%; text-align: left;">
                 <h4 style="font-size: 1rem; font-weight: 700; color: #1e293b; margin: 0;">Distribusi Peluang</h4>
+                <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px; font-weight: 500;">Proporsi kemungkinan selamat vs tidak selamat</div>
             </div>
-            <div style="position: relative; width: 14rem; height: 14rem; margin: 0 auto;">
+            
+            <div style="position: relative; width: 16rem; height: 16rem; margin: 0 auto;">
                 <svg style="width: 100%; height: 100%; transform: rotate(-90deg);" viewBox="0 0 100 100">
                     <circle cx="50" cy="50" r="40" fill="transparent" stroke="#f1f5f9" stroke-width="12"></circle>
-                    <circle cx="50" cy="50" r="40" fill="transparent" stroke="#10b981" stroke-width="12" stroke-dasharray="{dasharray}" stroke-dashoffset="{dashoffset}" stroke-linecap="round" style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));"></circle>
+                    <circle cx="50" cy="50" r="40" fill="transparent" stroke="{status_color}" stroke-width="12" stroke-dasharray="{dasharray}" stroke-dashoffset="{dashoffset}" stroke-linecap="round" style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));"></circle>
                 </svg>
                 <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                    <span style="font-size: 2.25rem; font-weight: 900; color: #0f172a; line-height: 1; margin-bottom: 4px;">{survived_prob:.0f}%</span>
-                    <span style="font-size: 0.6875rem; font-weight: 800; color: #10b981; text-transform: uppercase; letter-spacing: 0.1em; background: #ecfdf5; padding: 4px 12px; border-radius: 9999px;">Selamat</span>
+                    <span style="font-size: 3rem; font-weight: 900; color: #0f172a; line-height: 1; margin-bottom: 6px;">{display_prob:.0f}%</span>
+                    <span style="font-size: 0.75rem; font-weight: 800; color: {status_color}; text-transform: uppercase; letter-spacing: 0.1em; background: {bg_color}; padding: 4px 12px; border-radius: 9999px;">{status_text}</span>
                 </div>
             </div>
-            <div style="display: flex; justify-content: center; gap: 2rem; width: 100%; margin-top: 2.5rem; font-size: 0.875rem; font-weight: 700;">
-                <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 16px; height: 16px; border-radius: 50%; background-color: #10b981; box-shadow: 0 1px 2px rgba(0,0,0,0.05);"></span> Selamat <span style="color: #64748b; margin-left: 4px;">{survived_prob:.1f}%</span></div>
-                <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 16px; height: 16px; border-radius: 50%; background-color: #e2e8f0; border: 1px solid #cbd5e1;"></span> Tidak <span style="color: #64748b; margin-left: 4px;">{not_survived_prob:.1f}%</span></div>
+            
+            <div style="width: 100%;">
+                <div style="display: flex; justify-content: center; gap: 2rem; width: 100%; font-size: 0.875rem; font-weight: 700; margin-bottom: 1.5rem;">
+                    <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 16px; height: 16px; border-radius: 50%; background-color: #10b981; box-shadow: 0 1px 2px rgba(0,0,0,0.05);"></span> Selamat <span style="color: #64748b; margin-left: 4px;">{survived_prob:.1f}%</span></div>
+                    <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 16px; height: 16px; border-radius: 50%; background-color: #ef4444; border: 1px solid #fca5a5;"></span> Tidak <span style="color: #64748b; margin-left: 4px;">{not_survived_prob:.1f}%</span></div>
+                </div>
+                <div style="padding: 1rem; background-color: #f8fafc; border-radius: 0.75rem; font-size: 0.8125rem; color: #475569; text-align: left; line-height: 1.6; border: 1px solid #e2e8f0; font-weight: 500;">
+                    Model memprediksi penumpang ini <strong style="color: {status_color};">{status_text.lower()}</strong> dengan probabilitas {display_prob:.1f}%.
+                </div>
             </div>
         </div>
         """, unsafe_allow_html=True)
