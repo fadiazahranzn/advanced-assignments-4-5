@@ -30,9 +30,7 @@ html, body, [class*="css"] {
     font-family: 'Outfit', sans-serif;
 }
 
-/* Hide top right menu but keep the sidebar toggle visible */
-#MainMenu {visibility: hidden;}
-.stAppToolbar {display: none;}
+/* (Removed header hiding CSS to ensure sidebar toggle remains fully functional) */
 
 /* Adjust main padding */
 .block-container {
