@@ -214,9 +214,6 @@ if st.session_state.prediction_run:
     
     with col1:
         # Probability Gauge using SVG/HTML
-        dasharray = 251.2
-        dashoffset = dasharray - (dasharray * (display_prob / 100))
-        
         st.markdown(f"""
         <div class="dash-card" style="display: flex; flex-direction: column; align-items: center; justify-content: space-between; text-align: center;">
             <div style="width: 100%; text-align: left;">
@@ -224,9 +221,9 @@ if st.session_state.prediction_run:
                 <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px; font-weight: 500;">Proporsi kemungkinan selamat vs tidak selamat</div>
             </div>
             <div style="position: relative; width: 16rem; height: 16rem; margin: 0 auto;">
-                <svg style="width: 100%; height: 100%; transform: rotate(-90deg);" viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="40" fill="transparent" stroke="#f1f5f9" stroke-width="12"></circle>
-                    <circle cx="50" cy="50" r="40" fill="transparent" stroke="{status_color}" stroke-width="12" stroke-dasharray="{dasharray}" stroke-dashoffset="{dashoffset}" stroke-linecap="round" style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));"></circle>
+                <svg style="width: 100%; height: 100%; transform: rotate(-90deg);" viewBox="0 0 120 120">
+                    <circle cx="60" cy="60" r="45" fill="transparent" stroke="#f1f5f9" stroke-width="12"></circle>
+                    <circle cx="60" cy="60" r="45" fill="transparent" stroke="{status_color}" stroke-width="12" stroke-dasharray="100" stroke-dashoffset="{100 - display_prob}" stroke-linecap="round" pathLength="100" style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));"></circle>
                 </svg>
                 <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
                     <span style="font-size: 3rem; font-weight: 900; color: #0f172a; line-height: 1; margin-bottom: 6px;">{display_prob:.0f}%</span>
