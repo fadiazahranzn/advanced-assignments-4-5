@@ -24,7 +24,7 @@ except Exception as e:
 # --- Custom CSS Injection ---
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 html, body, [class*="css"] {
     font-family: 'Outfit', sans-serif;
@@ -39,7 +39,7 @@ header {visibility: hidden;}
     padding-bottom: 2rem !important;
 }
 
-.ticket-title { font-family: 'Playfair Display', serif; }
+.ticket-title { font-weight: 800; letter-spacing: -0.025em; }
 .ticket-cutout {
     position: relative;
     background-color: #fefce8;
