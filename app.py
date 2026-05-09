@@ -24,7 +24,7 @@ except Exception as e:
 # --- Custom CSS Injection ---
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Libre+Barcode+39&display=swap');
 
 html, body, [class*="css"] {
     font-family: 'Outfit', sans-serif;
@@ -333,8 +333,9 @@ if st.session_state.prediction_run:
                 </div>
             </div>
             <div style="padding: 1.5rem; background-color: rgba(254, 243, 199, 0.4); display: flex; justify-content: space-between; align-items: center; opacity: 0.9;">
-                <div style="opacity: 0.6; font-size: 0.5rem; font-family: monospace; letter-spacing: 0.2em; color: #78350f;">
-                    || | || || | || ||| |<br>TN-84920183
+                <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                    <div style="font-family: 'Libre Barcode 39', cursive; font-size: 2.5rem; color: rgba(120, 53, 15, 0.85); line-height: 0.6;">*TN84920*</div>
+                    <div style="font-size: 0.45rem; font-family: monospace; letter-spacing: 0.25em; color: rgba(120, 53, 15, 0.6); margin-top: 4px; padding-left: 2px;">TN-84920183</div>
                 </div>
                 <div style="text-align: right;">
                     <div style="font-size: 0.625rem; font-weight: 700; color: #78350f; letter-spacing: 0.05em;">MODEL v1.2</div>
