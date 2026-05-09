@@ -222,7 +222,7 @@ if st.session_state.prediction_run:
         st.markdown(f"""
         <div class="dash-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; text-align: center;">
             <div style="width: 100%;">
-                <h4 style="font-size: 1.125rem; font-weight: 700; color: #1e293b; margin: 0; text-align: right;">Distribusi Peluang</h4>
+                <h4 style="font-size: 1.125rem; font-weight: 700; color: #1e293b; margin: 0; text-align: left;">Distribusi Peluang</h4>
                 <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px; font-weight: 500; text-align: left;">Proporsi kemungkinan selamat vs tidak selamat</div>
             </div>
             <div style="position: relative; width: 14rem; height: 14rem; margin: 0 auto;">
@@ -268,7 +268,7 @@ if st.session_state.prediction_run:
         st.markdown(f"""
         <div class="dash-card" style="display: flex; flex-direction: column;">
             <div style="margin-bottom: 2rem; width: 100%;">
-                <h4 style="font-size: 1.125rem; font-weight: 700; color: #1e293b; margin: 0; text-align: right;">Pengaruh Data Input</h4>
+                <h4 style="font-size: 1.125rem; font-weight: 700; color: #1e293b; margin: 0; text-align: left;">Pengaruh Data Input</h4>
                 <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px; font-weight: 500; text-align: left;">Faktor penentu utama prediksi keselamatan</div>
             </div>
             <div style="display: flex; flex-direction: column; gap: 1.25rem; flex-grow: 1; justify-content: center;">
