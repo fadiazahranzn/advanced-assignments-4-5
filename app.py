@@ -30,8 +30,9 @@ html, body, [class*="css"] {
     font-family: 'Outfit', sans-serif;
 }
 
-/* Hide default streamlit header to make it look more like a custom app */
-header {visibility: hidden;}
+/* Hide top right menu but keep the sidebar toggle visible */
+#MainMenu {visibility: hidden;}
+.stAppToolbar {display: none;}
 
 /* Adjust main padding */
 .block-container {
