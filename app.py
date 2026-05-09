@@ -223,7 +223,6 @@ if st.session_state.prediction_run:
                 <h4 style="font-size: 1rem; font-weight: 700; color: #1e293b; margin: 0;">Distribusi Peluang</h4>
                 <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px; font-weight: 500;">Proporsi kemungkinan selamat vs tidak selamat</div>
             </div>
-            
             <div style="position: relative; width: 16rem; height: 16rem; margin: 0 auto;">
                 <svg style="width: 100%; height: 100%; transform: rotate(-90deg);" viewBox="0 0 100 100">
                     <circle cx="50" cy="50" r="40" fill="transparent" stroke="#f1f5f9" stroke-width="12"></circle>
@@ -234,7 +233,6 @@ if st.session_state.prediction_run:
                     <span style="font-size: 0.75rem; font-weight: 800; color: {status_color}; text-transform: uppercase; letter-spacing: 0.1em; background: {bg_color}; padding: 4px 12px; border-radius: 9999px;">{status_text}</span>
                 </div>
             </div>
-            
             <div style="width: 100%;">
                 <div style="display: flex; justify-content: center; gap: 2rem; width: 100%; font-size: 0.875rem; font-weight: 700; margin-bottom: 1.5rem;">
                     <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 16px; height: 16px; border-radius: 50%; background-color: #10b981; box-shadow: 0 1px 2px rgba(0,0,0,0.05);"></span> Selamat <span style="color: #64748b; margin-left: 4px;">{survived_prob:.1f}%</span></div>
