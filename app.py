@@ -255,7 +255,6 @@ if st.session_state.prediction_run:
         <div class="dash-card" style="display: flex; flex-direction: column;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
                 <h4 style="font-size: 1rem; font-weight: 700; color: #1e293b; margin: 0;">Pengaruh Data Input</h4>
-                <span style="font-size: 0.75rem; font-weight: 700; background-color: #eef2ff; color: #4f46e5; padding: 6px 12px; border-radius: 8px; border: 1px solid #e0e7ff;">Analisis Model</span>
             </div>
             <div style="display: flex; flex-direction: column; gap: 1.5rem; flex-grow: 1; justify-content: center;">
                 <div>
