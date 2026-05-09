@@ -221,9 +221,9 @@ if st.session_state.prediction_run:
             
         st.markdown(f"""
         <div class="dash-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; text-align: center;">
-            <div style="width: 100%; text-align: center;">
-                <h4 style="font-size: 1.125rem; font-weight: 700; color: #1e293b; margin: 0;">Distribusi Peluang</h4>
-                <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px; font-weight: 500;">Proporsi kemungkinan selamat vs tidak selamat</div>
+            <div style="width: 100%;">
+                <h4 style="font-size: 1.125rem; font-weight: 700; color: #1e293b; margin: 0; text-align: right;">Distribusi Peluang</h4>
+                <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px; font-weight: 500; text-align: left;">Proporsi kemungkinan selamat vs tidak selamat</div>
             </div>
             <div style="position: relative; width: 14rem; height: 14rem; margin: 0 auto;">
                 <svg style="width: 100%; height: 100%;" viewBox="0 0 120 120">
@@ -240,7 +240,7 @@ if st.session_state.prediction_run:
                     <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 16px; height: 16px; border-radius: 50%; background-color: #10b981; box-shadow: 0 1px 2px rgba(0,0,0,0.05);"></span> Selamat <span style="color: #64748b; margin-left: 4px;">{survived_prob:.1f}%</span></div>
                     <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 16px; height: 16px; border-radius: 50%; background-color: #ef4444; border: 1px solid #fca5a5;"></span> Tidak <span style="color: #64748b; margin-left: 4px;">{not_survived_prob:.1f}%</span></div>
                 </div>
-                <div style="font-size: 0.875rem; color: #64748b; text-align: center; line-height: 1.5; font-weight: 500;">
+                <div style="font-size: 0.875rem; color: #64748b; text-align: left; line-height: 1.5; font-weight: 500;">
                     Model memprediksi penumpang ini <strong style="color: {status_color};">{status_text.lower()}</strong> dengan probabilitas {display_prob:.1f}%.
                 </div>
             </div>
@@ -267,9 +267,9 @@ if st.session_state.prediction_run:
 
         st.markdown(f"""
         <div class="dash-card" style="display: flex; flex-direction: column;">
-            <div style="margin-bottom: 2rem;">
-                <h4 style="font-size: 1rem; font-weight: 700; color: #1e293b; margin: 0;">Pengaruh Data Input</h4>
-                <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px; font-weight: 500;">Faktor penentu utama prediksi keselamatan</div>
+            <div style="margin-bottom: 2rem; width: 100%;">
+                <h4 style="font-size: 1.125rem; font-weight: 700; color: #1e293b; margin: 0; text-align: right;">Pengaruh Data Input</h4>
+                <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px; font-weight: 500; text-align: left;">Faktor penentu utama prediksi keselamatan</div>
             </div>
             <div style="display: flex; flex-direction: column; gap: 1.25rem; flex-grow: 1; justify-content: center;">
                 <div>
@@ -309,7 +309,7 @@ if st.session_state.prediction_run:
                     </div>
                 </div>
             </div>
-            <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid #f1f5f9; font-size: 0.8125rem; color: #64748b; line-height: 1.6; font-weight: 500;">
+            <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid #f1f5f9; font-size: 0.8125rem; color: #64748b; line-height: 1.6; font-weight: 500; text-align: left;">
                 Model memberikan bobot besar pada <strong style="color: #1e293b; background: #f1f5f9; padding: 2px 4px; border-radius: 4px;">Jenis Kelamin ({sex})</strong> dan <strong style="color: #1e293b; background: #f1f5f9; padding: 2px 4px; border-radius: 4px;">Kelas Tiket</strong> dalam menentukan peluang keselamatan ini.
             </div>
         </div>
