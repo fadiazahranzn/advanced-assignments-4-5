@@ -250,13 +250,20 @@ if st.session_state.prediction_run:
         pclass_color = "#10b981" if pclass < 3 else "#ef4444"
         pclass_bg = "linear-gradient(to right, #34d399, #10b981)" if pclass < 3 else "linear-gradient(to right, #f87171, #ef4444)"
         pclass_width = "60%" if pclass == 1 else ("40%" if pclass == 2 else "15%")
+        
+        fare_bonus = "+8%" if fare >= 30 else "-8%"
+        fare_color = "#10b981" if fare >= 30 else "#f43f5e"
+        fare_bg = "linear-gradient(to right, #34d399, #10b981)" if fare >= 30 else "linear-gradient(to left, #fb7185, #f43f5e)"
+        fare_width = "25%"
+        fare_justify = "flex-start" if fare >= 30 else "flex-end"
 
         st.markdown(f"""
         <div class="dash-card" style="display: flex; flex-direction: column;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <div style="margin-bottom: 2rem;">
                 <h4 style="font-size: 1rem; font-weight: 700; color: #1e293b; margin: 0;">Pengaruh Data Input</h4>
+                <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px; font-weight: 500;">Faktor penentu utama prediksi keselamatan</div>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 1.5rem; flex-grow: 1; justify-content: center;">
+            <div style="display: flex; flex-direction: column; gap: 1.25rem; flex-grow: 1; justify-content: center;">
                 <div>
                     <div style="display: flex; justify-content: space-between; font-size: 0.875rem; font-weight: 700; margin-bottom: 8px;">
                         <span style="color: #334155;">Jenis Kelamin ({sex})</span>
@@ -277,6 +284,15 @@ if st.session_state.prediction_run:
                 </div>
                 <div>
                     <div style="display: flex; justify-content: space-between; font-size: 0.875rem; font-weight: 700; margin-bottom: 8px;">
+                        <span style="color: #334155;">Tarif Tiket (£{fare:.2f})</span>
+                        <span style="color: {fare_color};">{fare_bonus}</span>
+                    </div>
+                    <div style="width: 100%; background-color: #f1f5f9; border-radius: 9999px; height: 12px; overflow: hidden; display: flex; justify-content: {fare_justify}; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);">
+                        <div style="background: {fare_bg}; height: 100%; border-radius: 9999px; width: {fare_width}; transition: all 0.5s;"></div>
+                    </div>
+                </div>
+                <div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.875rem; font-weight: 700; margin-bottom: 8px;">
                         <span style="color: #334155;">Saudara/Pasangan ({sibsp})</span>
                         <span style="color: #f43f5e;">-5%</span>
                     </div>
@@ -285,7 +301,7 @@ if st.session_state.prediction_run:
                     </div>
                 </div>
             </div>
-            <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #f1f5f9; font-size: 0.8125rem; color: #64748b; line-height: 1.6; font-weight: 500;">
+            <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid #f1f5f9; font-size: 0.8125rem; color: #64748b; line-height: 1.6; font-weight: 500;">
                 Model memberikan bobot besar pada <strong style="color: #1e293b; background: #f1f5f9; padding: 2px 4px; border-radius: 4px;">Jenis Kelamin ({sex})</strong> dan <strong style="color: #1e293b; background: #f1f5f9; padding: 2px 4px; border-radius: 4px;">Kelas Tiket</strong> dalam menentukan peluang keselamatan ini.
             </div>
         </div>
