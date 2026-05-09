@@ -48,6 +48,7 @@ header {visibility: hidden;}
     color: #451a03;
     overflow: hidden;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    height: 540px;
 }
 .ticket-cutout::before, .ticket-cutout::after {
     content: '';
@@ -69,7 +70,7 @@ header {visibility: hidden;}
     padding: 2rem;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     border: 1px solid #e2e8f0;
-    height: 100%;
+    height: 540px;
 }
 
 /* Button override */
@@ -294,7 +295,7 @@ if st.session_state.prediction_run:
     with col3:
         # Boarding Pass
         st.markdown(f"""
-        <div class="ticket-cutout" style="display: flex; flex-direction: column; height: 100%;">
+        <div class="ticket-cutout" style="display: flex; flex-direction: column;">
             <div style="background-color: #0f172a; color: #fefce8; padding: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
                 <div>
                     <div style="font-size: 0.75rem; letter-spacing: 0.2em; color: #94a3b8; text-transform: uppercase; font-weight: 700;">White Star Line</div>
