@@ -236,7 +236,7 @@ if st.session_state.prediction_run:
                 </div>
             </div>
             <div style="width: 100%;">
-                <div style="display: flex; justify-content: flex-start; gap: 1rem; width: 100%; font-size: 0.8125rem; font-weight: 700; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                <div style="display: flex; justify-content: center; gap: 1rem; width: 100%; font-size: 0.8125rem; font-weight: 700; margin-bottom: 1.5rem; flex-wrap: wrap;">
                     <div style="display: flex; align-items: center; gap: 6px;"><span style="width: 12px; height: 12px; border-radius: 50%; background-color: #10b981; box-shadow: 0 1px 2px rgba(0,0,0,0.05);"></span> Selamat <span style="color: #64748b; margin-left: 2px;">{survived_prob:.1f}%</span></div>
                     <div style="display: flex; align-items: center; gap: 6px;"><span style="width: 12px; height: 12px; border-radius: 50%; background-color: #ef4444; border: 1px solid #fca5a5;"></span> Tidak <span style="color: #64748b; margin-left: 2px;">{not_survived_prob:.1f}%</span></div>
                 </div>
