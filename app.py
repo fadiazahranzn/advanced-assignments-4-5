@@ -334,8 +334,8 @@ if st.session_state.prediction_run:
             </div>
             <div style="padding: 1.5rem; background-color: rgba(254, 243, 199, 0.4); display: flex; justify-content: space-between; align-items: center; opacity: 0.9;">
                 <div style="display: flex; flex-direction: column; align-items: flex-start;">
-                    <div style="font-family: 'Libre Barcode 39', cursive; font-size: 2.5rem; color: rgba(120, 53, 15, 0.85); line-height: 0.6;">*TN84920*</div>
-                    <div style="font-size: 0.45rem; font-family: monospace; letter-spacing: 0.25em; color: rgba(120, 53, 15, 0.6); margin-top: 4px; padding-left: 2px;">TN-84920183</div>
+                    <div style="font-family: 'Libre Barcode 39', cursive; font-size: 2rem; color: rgba(120, 53, 15, 0.85); line-height: 0.6;">*TN84*</div>
+                    <div style="font-size: 0.45rem; font-family: monospace; letter-spacing: 0.25em; color: rgba(120, 53, 15, 0.6); margin-top: 6px; padding-left: 2px;">TN-84920183</div>
                 </div>
                 <div style="text-align: right;">
                     <div style="font-size: 0.625rem; font-weight: 700; color: #78350f; letter-spacing: 0.05em;">MODEL v1.2</div>
